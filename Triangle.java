@@ -1,3 +1,9 @@
+/*
+ * Alex Douk
+ * TCSS 143
+ */
+
+
 public class Triangle extends AbstractShape {
     private double mySideA;
     private double mySideB;
