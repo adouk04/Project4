@@ -8,15 +8,14 @@ public class Circle extends AbstractShape {
 
     public Circle(final double radius) {
         super("Circle", ++myID);
-        this.myRadius = radius;
-    }
-
-    public double setRadius(final double radius) {
         if (radius <= 0) {
             myID--; // Decrement myID before throwing exception
             throw new IllegalArgumentException("ERROR! Negative or 0 value can't be applied to a circle radius.");
         }
         this.myRadius = radius;
+    }
+
+    public double setRadius(final double radius) {
         return radius;
     }
 
