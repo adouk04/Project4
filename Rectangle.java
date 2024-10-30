@@ -32,8 +32,8 @@ public class Rectangle  extends AbstractShape {
     }
 
     public String toString() {
-        return super.getName() + " [Length:" + myLength
-                + "Width: " + myWidth + "] Area: " + calculateArea();
+        return String.format("%s [Length: %.2f, Width: %.2f] Area: %.2f", super.getName(), myLength, myWidth, calculateArea());
+
     }
 
     public int compareTo(Shape o) {

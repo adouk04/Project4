@@ -29,7 +29,7 @@ public class Circle extends AbstractShape {
     }
 
     public String toString() {
-        return super.getName() + " [" + "Radius: " + myRadius + "] Area: " + calculateArea();
+        return String.format("%s [Radius: %.2f] Area: %.2f", super.getName(), myRadius, calculateArea());
     }
 
     @Override

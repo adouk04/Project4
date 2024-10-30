@@ -52,9 +52,9 @@ public class Triangle extends AbstractShape {
     }
 
     public String toString() {
-        return super.getName() + " [SideA:" + mySideA
-                + "SideB: " + mySideB + "SideC: " + mySideC
-                + "] Area: " + calculateArea();
+        return String.format("%s [SideA: %.2f, SideB: %.2f, SideC: %.2f] Area: %.2f", super.getName(), mySideA, mySideB,
+                mySideC, calculateArea());
+
     }
 
     public int compareTo(Shape o) {
