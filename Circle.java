@@ -6,17 +6,17 @@ public class Circle extends AbstractShape {
         this(1.0);
     }
 
-    public Circle(final double radius) {
+    public Circle(final double theRadius) {
         super("Circle", ++myID);
-        if (radius <= 0) {
+        if (theRadius <= 0) {
             myID--; // Decrement myID before throwing exception
             throw new IllegalArgumentException("ERROR! Negative or 0 value can't be applied to a circle radius.");
         }
-        this.myRadius = radius;
+        this.myRadius = theRadius;
     }
 
-    public double setRadius(final double radius) {
-        return radius;
+    public void setRadius(final double radius) {
+        myRadius = radius;
     }
 
     public double calculateArea() {

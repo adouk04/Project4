@@ -3,7 +3,6 @@
  * TCSS 143
  */
 
-
 public class Triangle extends AbstractShape {
     private double mySideA;
     private double mySideB;
@@ -16,31 +15,41 @@ public class Triangle extends AbstractShape {
 
     public Triangle(final double sideA, final double sideB, final double sideC) {
         super("Triangle", ++myID);
+        double longestSide = Math.max(sideA, Math.max(sideB, sideC));
+        double solution = longestSide * longestSide;
+        if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
+            if (longestSide == sideC) {
+                if (solution != sideA * sideB + sideB * sideB) {
+                    myID--; // Decrement myID before throwing exception
+                    throw new IllegalArgumentException("ERROR! Negative or 0 value can't be applied to a rectangle.");
+                }
+            }
+            else if (longestSide == sideB) {
+                if (solution != sideA * sideA + sideC * sideC) {
+                    myID--;
+                    throw new IllegalArgumentException("ERROR! Negative or 0 value can't be applied to a rectangle.");
+                }
+            }
+            else if (longestSide == sideA) {
+                if (solution != sideB * sideB + sideC * sideC) {
+                    myID--;
+                    throw new IllegalArgumentException("ERROR! Negative or 0 value can't be applied to a rectangle.");
+                }
+            }
+        }
         this.mySideA = sideA;
         this.mySideB = sideB;
         this.mySideC = sideC;
     }
 
     public void setSideA(final double sideA) {
-        if (sideA <= 0 && mySideC * mySideC > (mySideA*mySideA) + (mySideB * mySideB)) {
-            myID--; // Decrement myID before throwing exception
-            throw new IllegalArgumentException("ERROR! Negative or 0 value can't be applied to a rectangle.");
-        }
         this.mySideA = sideA;
     }
     public void setSideB(final double sideB) {
-        if (sideB <= 0 && mySideC * mySideC > (mySideA*mySideA) + (mySideB * mySideB)) {
-            myID--; // Decrement myID before throwing exception
-            throw new IllegalArgumentException("ERROR! Negative or 0 value can't be applied to a rectangle.");
-        }
         this.mySideB = sideB;
     }
 
     public void setSideC(final double sideC) {
-        if (sideC <= 0 && mySideC * mySideC > (mySideA*mySideA) + (mySideB * mySideB)) {
-            myID--; // Decrement myID before throwing exception
-            throw new IllegalArgumentException("ERROR! Negative or 0 value can't be applied to a rectangle.");
-        }
         this.mySideA = sideC;
     }
     public double calculateArea() {
