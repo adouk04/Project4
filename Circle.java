@@ -23,9 +23,7 @@ public class Circle extends AbstractShape {
         return (myRadius * myRadius) * Math.PI;
     }
     public final Shape copyShape() {
-        Circle newC = new Circle();
-        newC.myRadius = myRadius;
-        return newC;
+        return new Circle(myRadius);
     }
 
     public String toString() {
@@ -34,6 +32,6 @@ public class Circle extends AbstractShape {
 
     @Override
     public int compareTo(Shape o) {
-        return 0;
+        return Double.compare(this.calculateArea(), o.calculateArea());
     }
 }

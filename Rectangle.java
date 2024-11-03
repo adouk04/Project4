@@ -37,7 +37,7 @@ public class Rectangle  extends AbstractShape {
     }
 
     public int compareTo(Shape o) {
-        return 0;
+        return Double.compare(this.calculateArea(), o.calculateArea());
     }
 
 }
