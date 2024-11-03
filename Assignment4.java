@@ -6,7 +6,7 @@ public class Assignment4 {
             Scanner console = new Scanner(System.in);
             Scanner input = new Scanner(new File("in4.txt"));
             PrintStream output = new PrintStream(new File("out4.txt"));
-
+            //test
             //everything for the original list
             LinkedList<Shape> myList = new LinkedList<>();
             while (input.hasNextLine()) {
