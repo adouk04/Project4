@@ -15,23 +15,22 @@ public class Circle extends AbstractShape {
         this.myRadius = theRadius;
     }
 
-    public void setRadius(final double radius) {
-        myRadius = radius;
+    public void setRadius(final double theRadius) {
+        if (theRadius <= 0) {
+            throw new IllegalArgumentException("ERROR! Negative or 0 value can't be applied to a circle radius.");
+        }
+        myRadius = theRadius;
     }
 
     public double calculateArea() {
         return (myRadius * myRadius) * Math.PI;
     }
     public final Shape copyShape() {
-        return new Circle(myRadius);
+        Circle newC = new Circle(myRadius);
+        return newC;
     }
 
     public String toString() {
         return String.format("%s [Radius: %.2f] Area: %.2f", super.getName(), myRadius, calculateArea());
-    }
-
-    @Override
-    public int compareTo(Shape o) {
-        return Double.compare(this.calculateArea(), o.calculateArea());
     }
 }

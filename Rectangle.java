@@ -16,10 +16,16 @@ public class Rectangle  extends AbstractShape {
         this.myWidth = myWidth;
     }
     public void setLength(final double theLength) {
+        if (theLength <= 0) {
+            throw new IllegalArgumentException("ERROR! Negative or 0 value can't be applied to a rectangle.");
+        }
         this.myLength = theLength;
     }
 
     public void setWidth(final double theWidth) {
+        if (theWidth <= 0) {
+            throw new IllegalArgumentException("ERROR! Negative or 0 value can't be applied to a rectangle.");
+        }
         this.myWidth = theWidth;
     }
 
@@ -35,9 +41,4 @@ public class Rectangle  extends AbstractShape {
         return String.format("%s [Length: %.2f, Width: %.2f] Area: %.2f", super.getName(), myLength, myWidth, calculateArea());
 
     }
-
-    public int compareTo(Shape o) {
-        return Double.compare(this.calculateArea(), o.calculateArea());
-    }
-
 }

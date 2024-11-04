@@ -56,8 +56,4 @@ public class Triangle extends AbstractShape {
                 mySideC, calculateArea());
 
     }
-
-    public int compareTo(Shape o) {
-        return Double.compare(this.calculateArea(), o.calculateArea());
-    }
 }

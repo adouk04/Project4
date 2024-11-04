@@ -7,4 +7,9 @@ public abstract class AbstractShape implements Shape {
         return this.shapeName;
     }
 
+    @Override
+    public int compareTo(Shape other) {
+        return Double.compare(this.calculateArea(), other.calculateArea());
+    }
+
 }
