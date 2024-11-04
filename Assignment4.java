@@ -57,27 +57,33 @@ public class Assignment4 {
     }
 
     /**
-     * Prints each Shape object from the list to the provided output stream.
+     * Prints each Shape object from the list
+     * to the provided output stream.
      *
      * @param output The PrintStream to which the shapes are printed.
      * @param myList The list of shapes to be printed.
      */
-    public static void outputList(PrintStream output, List<Shape> myList) {
+    public static void outputList
+                        (PrintStream output, List<Shape> myList) {
         for (Shape shape : myList) {
             output.println(shape);
         }
     }
 
     /**
-     * Reads shapes from the input Scanner and adds them to the specified list.
-     * If the line of values matches the expected format for a shape, it creates a new
-     * Shape object (Circle, Rectangle, or Triangle) and adds it to the list.
+     * Reads shapes from the input Scanner
+     * and adds them to the specified list.
+     * If the line of values matches the
+     * expected format for a shape, it creates a new
+     * Shape object (Circle, Rectangle, or Triangle)
+     * and adds it to the list.
      *
      * @param input The Scanner object reading from the input file.
      * @param myList The list to which the shapes are added.
      * @return A copy of the original list for further processing.
      */
-    public static List<Shape> getOriginalList(Scanner input, List<Shape> myList) {
+    public static List<Shape> getOriginalList
+                            (Scanner input, List<Shape> myList) {
         while (input.hasNextLine()) {
             List<Double> values = new ArrayList<>();
             String line = input.nextLine();
@@ -97,12 +103,15 @@ public class Assignment4 {
                 if (values.size() == 1) {
                     myList.add(new Circle(values.get(0)));
                 } else if (values.size() == 2) {
-                    myList.add(new Rectangle(values.get(0), values.get(1)));
+                    myList.add(new Rectangle
+                            (values.get(0), values.get(1)));
                 } else if (values.size() == 3) {
-                    myList.add(new Triangle(values.get(0), values.get(1), values.get(2)));
+                    myList.add(new Triangle
+                            (values.get(0), values.get(1),
+                                    values.get(2)));
                 }
             } catch (IllegalArgumentException iAE) {
-                System.out.println(iAE.getMessage());
+                System.out.println(iAE);
             }
         }
 
