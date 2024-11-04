@@ -7,7 +7,7 @@ public class Assignment4 {
             Scanner console = new Scanner(System.in);
             Scanner input = new Scanner(new File("in4.txt"));
             PrintStream output = new PrintStream(new File("out4.txt"));
-
+            //comment
             List<Shape> myList = new LinkedList<Shape>();
             List<Shape> copyList = getOriginalList(input, myList);
 
